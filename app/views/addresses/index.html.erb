@@ -1,0 +1,6 @@
+<p>hello world</p>
+
+<%= form_with url: address_path(2400023), method: :get do |form| %>
+  <%= form.text_field :value %>
+  <%= form.submit 'search' %>
+<% end %>

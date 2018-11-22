@@ -1,0 +1,5 @@
+<p>Search address with zipcode</p>
+<%= form_with url: address_path(:show), method: :get, local: true do |form| %>
+  <%= form.text_field :value %>
+  <%= form.submit 'search' %>
+<% end %>
