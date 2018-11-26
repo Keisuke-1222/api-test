@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     get 'average' => 'zaimauth#average'
     get 'payment' => 'zaimauth#payment'
     get 'category' => 'zaimauth#category'
+    get 'category/:id' => 'zaimauth#genres'
   end
 end

@@ -51,6 +51,18 @@ class Money::ZaimauthController < ApplicationController
     @categories = JSON.parse(categories.body)['categories']
   end
 
+  def genres
+    set_consumer
+    @access_token = OAuth::AccessToken.new(@consumer, ACCESS_TOKEN, ACCESS_SECRET)
+
+    genres_params = URI.encode_www_form({
+      genre_id: params[:id]
+    })
+
+    genres = @access_token.get("#{API_URL}home/genre?#{genres_params}")
+    @genres = JSON.parse(genres.body)['genres'].select { |genre| genre['category_id'] == params[:id].to_i }
+  end
+
   def payment
     payment_params = URI.encode_www_form({
       mapping: 1,

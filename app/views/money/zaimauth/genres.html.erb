@@ -1,0 +1,6 @@
+<p>genres page</p>
+<p>category_id: <%= params[:id] %></p>
+<p>genres list</p>
+<% @genres.each do |genre| %>
+  <li><%= genre['id'] %>: <%= genre['name'] %></li>
+<% end %>
