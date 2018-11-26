@@ -1,0 +1,4 @@
+<p>category page</p>
+<% @categories.each do |category| %>
+  <li><%= category['id'] %>: <%= category['name'] %></li>
+<% end %>

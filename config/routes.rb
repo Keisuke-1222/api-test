@@ -6,5 +6,10 @@ Rails.application.routes.draw do
   get 'top' => 'zaimauth#top'
   get 'callback' => 'zaimauth#callback'
   get 'login' => 'zaimauth#login'
-  get 'money' => 'zaimauth#money'
+  namespace 'money' do
+    get 'index' => 'zaimauth#index'
+    get 'average' => 'zaimauth#average'
+    get 'payment' => 'zaimauth#payment'
+    get 'category' => 'zaimauth#category'
+  end
 end
