@@ -1,4 +1,4 @@
 <p>category page</p>
 <% @categories.each do |category| %>
-  <li><%= category['id'] %>: <%= category['name'] %></li>
+  <li><%= link_to category['id'], money_path(category['id']) %>: <%= category['name'] %></li>
 <% end %>
